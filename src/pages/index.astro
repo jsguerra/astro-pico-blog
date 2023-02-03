@@ -1,16 +1,12 @@
 ---
-import "../styles/pico.min.css";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTite = "Home";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Hello Astro Page</h1>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTite}>
+  <article>
+    <h1>An Article on the Homepage</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, libero. Quasi nihil nulla adipisci a autem hic provident eos soluta quia numquam? Eum aliquam exercitationem cupiditate consequuntur minima aspernatur vero!</p>
+  </article>
+</BaseLayout>

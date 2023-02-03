@@ -1,0 +1,21 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import slugify from "@utils/slugify";
+import getSortedPosts from "@utils/getSortedPosts";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+const sortedPosts = getSortedPosts(posts);
+---
+
+<BaseLayout pageTitle="Blog">
+  <ul>
+    {
+      sortedPosts.map(({ data }) => (
+        <li>
+          <a href={`/posts/${slugify(data)}`}>{data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

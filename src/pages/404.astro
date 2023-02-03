@@ -1,0 +1,13 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle = '404 Not Found';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="container">
+    <h1 aria-label="404 Not Found">{pageTitle}</h1>
+    <span aria-hidden="true">¯\_(ツ)_/¯</span>
+    <p>Page Not Found</p>
+  </div>
+</BaseLayout>

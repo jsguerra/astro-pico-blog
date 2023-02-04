@@ -1,19 +1,26 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import slugify from "@utils/slugify";
-import getSortedPosts from "@utils/getSortedPosts";
 import { getCollection } from "astro:content";
+// import getSortedPosts from "@utils/getSortedPosts";
 
 const posts = await getCollection("blog");
-const sortedPosts = getSortedPosts(posts);
+// const sortedPosts = getSortedPosts(posts);
+
+const sortedPosts = posts
+    .filter(({ data }) => !data.draft)
+    .sort(
+      (a, b) =>
+        Math.floor(new Date(b.data.date).getTime() / 1000) -
+        Math.floor(new Date(a.data.date).getTime() / 1000)
+    );
 ---
 
 <BaseLayout pageTitle="Blog">
   <ul>
     {
-      sortedPosts.map(({ data }) => (
+      sortedPosts.map((post) => (
         <li>
-          <a href={`/posts/${slugify(data)}`}>{data.title}</a>
+          <a href={`/posts/${post.slug}`}>{post.data.title}</a>
         </li>
       ))
     }

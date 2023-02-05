@@ -1,6 +1,6 @@
 # Astro Pico CSS Blog
 
-An Astro setup with Pico CSS for styling. 
+An Astro setup with Pico CSS for styling. Functional search page using Reactjs component and built in pagination for the blog.
 
 ## 🧞 Commands
 

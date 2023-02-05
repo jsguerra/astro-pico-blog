@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Pagination from "@components/Pagination.astro";
+import { SITE } from "@config";
+
+export async function getStaticPaths({ paginate }: any) {
+  const posts = await getCollection("blog");
+
+  const sortedPosts = posts
+    .filter(({ data }) => !data.draft)
+    .sort(
+      (a, b) =>
+        Math.floor(new Date(b.data.date).getTime() / 1000) -
+        Math.floor(new Date(a.data.date).getTime() / 1000)
+    );
+  // Generate pages from our array of astronauts, with 2 to a page
+  return paginate(sortedPosts, { pageSize: SITE.postPerPage });
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+---
+
+<BaseLayout pageTitle="Blog">
+  <h1>Page {page.currentPage}</h1>
+  <ul>
+    {
+      page.data.map((post: any) => <li>{post.data.title}</li>)
+    }
+  </ul>
+
+  <Pagination currentPage={page.currentPage} lastPage={page.lastPage} />
+</BaseLayout>

@@ -1,8 +1,8 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/",
+  website: "https://domain.com/",
   author: "Jose",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  title: "CustomAstroBlog",
   ogImage: "astropaper-og.jpg",
   postPerPage: 3,
 }

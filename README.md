@@ -1,6 +1,15 @@
 # Astro Pico CSS Blog
 
-An Astro setup with Pico CSS for styling. Functional search page using Reactjs component and built in pagination for the blog.
+> The main purpose of this build is to be used as a started template to build a blog or general site.
+
+An Astro setup with Pico CSS for styling.
+
+**Features**
+* Functional Search page
+* Pagination
+* Astro Collections
+* Central Config
+* Draft option
 
 ## 🧞 Commands
 

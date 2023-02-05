@@ -1,0 +1,31 @@
+.site-header {
+  background-color: white;
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.site-header p {
+  margin: 0;
+}
+
+.nav-primary a {
+  margin-right: 20px;
+}
+
+.nav-primary a:last-child {
+  margin-right: 0;
+}
+
+body>main {
+  padding-top: 120px;
+}
+
+.site-footer {
+  padding: 0;
+  text-align: center;
+}

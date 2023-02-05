@@ -26,5 +26,5 @@ const sortedPosts = posts
       ))
     }
   </ul>
-  <Pagination currentPage={1} total={2} />
+  {posts.length > SITE.postPerPage && <Pagination currentPage={1} total={2} />}
 </BaseLayout>

@@ -22,7 +22,7 @@ const { pathname } = Astro.url;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pathname == "/" ? "" : pageTitle} {SITE.title}</title>
+    <title>{pathname == "/" ? "" : pageTitle + " |"} {SITE.title}</title>
     <meta name="title" content={pageTitle} />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
